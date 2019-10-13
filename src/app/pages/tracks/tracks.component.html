@@ -1,0 +1,88 @@
+<div class="background">
+
+  <mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav mode="side" opened class="sidenav">
+      <img src="assets\icons\spotify petit format logo.PNG" class="small-logo">
+
+      <div class=" offset-2 col-2 card-position">
+        <mat-card class="card-style">
+          <img src={{imageUrl}} class="img-album">
+        </mat-card>
+      </div>
+      <div class="offset-3 col-6 mt-2" fxLayoutAlign="center">
+        <span class="album-title">{{albumName}}</span>
+      </div>
+      <div class="offset-3  col-6 mt-1" fxLayoutAlign="center">
+        <span class="album-tracks">{{totalTracks}} musics</span>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <div class="header-position">
+        <div class="row">
+          <div class="offset-2 col-1 ">
+            <a routerLink="/playlist"> <i class="fas fa-chevron-circle-left icon-style mt-3"></i></a>
+          </div>
+
+          <div class="offset-6 col-3">
+            <div class=" row">
+              <div class="col-4">
+                <img [src]="profileImage" class="profil-style">
+              </div>
+              <div class="col-8">
+                
+                    <div class="row">
+                  <div class=" col-12 mt-3">
+                    <span style="color:white">{{owner}}</span>
+                  </div>
+                  <div class="col-12">
+                    <span class="followers">{{owner}} | followers: {{followers}}</span>
+                  </div>
+                
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offset-2 col-7">
+        <div class="row">
+          <div class="col-12">
+            <input placeholder="PESQUISAR..." class="input-style"  (input)="filter($event.target.value)">
+          </div>
+          <div class="col-12">
+            <div class="track-style mt-5" *ngFor="let item of filtred">
+              <div class="row">
+
+                <div class="col-4">
+                  <div class="row">
+                    <i class="fas fa-circle  col-1 mt-2 point-style"></i>
+                    <div class="col-8">
+                      <div class="row">
+                        <div class="col-12">
+                          <span class="track-name">{{item.track.name}}</span>
+                        </div>
+                        <div class="col-12">
+                          <span class=" artist-name">{{item.track.artists[0].name}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-7 col-1">
+                <span class="duration mt-3">
+                    {{convert(item.track.duration_ms)}}
+                </span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

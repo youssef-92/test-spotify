@@ -1,0 +1,49 @@
+.background{
+
+    height:100%;
+    width: 100%;
+    background: rgb(135,135,135);
+    background: linear-gradient(180deg, rgba(135,135,135,1) 0%, rgba(0,0,0,1) 100%);
+  
+}
+
+.profil-style{
+    height: 150px;
+    width:150px;
+    
+    border-radius: 75px;
+    
+}
+
+.card-style{
+    height: 160px;
+    width:160px;
+    padding:0 !important
+   
+}
+.card-style:hover{
+    box-shadow: 0 4px 8px 0 white, ;
+    cursor: pointer;
+
+}
+.album-title{
+color:white ;font-weight: bolder;
+}
+.album-tracks{
+    font-size: 12px;
+    color: white;
+}
+
+.followers{
+    color: white;
+    font-size: small;
+}
+
+.img-album{
+    height: 100%;
+    width: 100%;
+}
+
+.small-logo{
+    padding:75px
+}

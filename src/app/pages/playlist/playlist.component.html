@@ -1,0 +1,41 @@
+<div class="background">
+    <img src="assets/icons/spotify petit format logo.PNG" class="small-logo">
+  <div class="container">
+    <div class="row">
+      <div class="offset-5 col-2 position">
+        <img src={{imageUrl}} class="profil-style">
+      </div>
+      <div class="offset-5 col-2">
+        <h2 style="color:white">{{owner}}</h2>
+      </div>
+      <div class="offset-5 col-2 mb-5">
+        <span class="followers">{{owner}} | followers :{{followers}}</span>
+      </div>
+    </div>
+
+    <div class="row" fxLayoutAlign="center">
+      <div class="  col-2" *ngFor="let album of playlist">
+        <mat-card class="card-style" [routerLink]="['/playlist/',album.id]">
+          <img src={{album.images[0].url}} class="img-album">
+        </mat-card>
+        <div class="row">
+          <div class="offset-3 col-6 mt-2" fxLayoutAlign="center">
+          <span  class="album-title">{{album.name}}</span>
+          </div>
+          <div  class="offset-3 col-6 mt-1 " fxLayoutAlign="center">
+          <span  class="album-tracks">{{album.tracks.total}} musics</span>
+          
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
